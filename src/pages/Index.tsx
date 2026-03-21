@@ -5,70 +5,74 @@ import AthleteSection from "@/components/AthleteSection";
 import FlavorsSection from "@/components/FlavorsSection";
 import StatsSection from "@/components/StatsSection";
 import CTASection from "@/components/CTASection";
+import CursorGlow from "@/components/CursorGlow";
+import FloatingParticles from "@/components/FloatingParticles";
+import MarqueeTicker from "@/components/MarqueeTicker";
+import SocialProof from "@/components/SocialProof";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <CursorGlow />
+      <FloatingParticles />
       <Navbar />
       <HeroSection />
-      
-      {/* Divider */}
-      <div className="container px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      </div>
+
+      {/* Marquee divider */}
+      <MarqueeTicker />
 
       <div id="highlights">
         <ProductHighlights />
       </div>
 
+      <SocialProof />
+
       <div className="container px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
       </div>
 
       <div id="athletes">
         <AthleteSection />
       </div>
 
-      <div className="container px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      </div>
+      <MarqueeTicker />
 
       <div id="flavors">
         <FlavorsSection />
       </div>
 
       <div className="container px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
       </div>
 
-      <div id="stats">
+      <div id="performance">
         <StatsSection />
       </div>
 
       <div className="container px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
       </div>
 
       <CTASection />
 
       {/* Footer */}
-      <footer className="border-t border-border/30 py-10">
+      <footer className="border-t border-[hsl(0_0%_100%/0.04)] py-12 relative">
         <div className="container px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-3">
-              <svg width="24" height="12" viewBox="0 0 28 14" fill="none" className="text-primary/60">
+              <svg width="24" height="12" viewBox="0 0 28 14" fill="none" className="text-primary/40">
                 <path d="M2 12C4 8 10 2 16 2C20 2 24 4 26 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
               </svg>
-              <span className="font-display font-bold text-sm uppercase tracking-wider text-foreground/30">
+              <span className="font-display font-bold text-sm uppercase tracking-wider text-foreground/20">
                 Nike Pulse™ 2026
               </span>
             </div>
-            <div className="flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] text-muted-foreground/60">
-              <span>Privacy</span>
-              <span>Terms</span>
-              <span>Contact</span>
+            <div className="flex items-center gap-10 text-[9px] uppercase tracking-[0.25em] text-muted-foreground/40">
+              {["Privacy", "Terms", "Contact", "Press Kit"].map((item) => (
+                <span key={item} className="hover:text-muted-foreground/70 transition-colors cursor-pointer">{item}</span>
+              ))}
             </div>
-            <span className="text-[10px] text-muted-foreground/40 uppercase tracking-wider">
+            <span className="text-[9px] text-muted-foreground/30 uppercase tracking-[0.15em]">
               Fictional product — design concept only
             </span>
           </div>
