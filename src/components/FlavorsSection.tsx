@@ -106,30 +106,30 @@ const FlavorsSection = () => {
 
   return (
     <>
-      <section className="relative py-28 lg:py-36 overflow-hidden" ref={ref}>
-        <div className="container px-6 relative z-10">
-          <div className={`text-center mb-20 space-y-4 reveal-hidden ${isVisible ? "reveal-visible" : ""}`}>
+      <section className="relative py-20 sm:py-28 lg:py-36 overflow-hidden" ref={ref}>
+        <div className="container px-4 sm:px-6 relative z-10">
+          <div className={`text-center mb-12 sm:mb-16 lg:mb-20 space-y-3 sm:space-y-4 reveal-hidden ${isVisible ? "reveal-visible" : ""}`}>
             <div className="accent-line mx-auto" />
-            <p className="text-xs font-body font-semibold tracking-[0.35em] uppercase text-primary pt-3">
+            <p className="text-[10px] sm:text-xs font-body font-semibold tracking-[0.3em] sm:tracking-[0.35em] uppercase text-primary pt-2 sm:pt-3">
               Choose Your Fuel
             </p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold uppercase tracking-tight leading-[0.9]">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold uppercase tracking-tight leading-[0.9]">
               Three Flavors.{" "}
               <span className="text-primary text-glow-green">One Mission.</span>
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
             {flavors.map((flavor, i) => (
               <div
                 key={flavor.name}
-                className={`relative glass-card p-8 lg:p-10 flex flex-col items-center gap-8 group cursor-pointer overflow-hidden reveal-hidden ${isVisible ? "reveal-visible" : ""}`}
+                className={`relative glass-card p-6 sm:p-8 lg:p-10 flex flex-col items-center gap-6 sm:gap-8 group cursor-pointer overflow-hidden active:scale-98 transition-transform reveal-hidden ${isVisible ? "reveal-visible" : ""}`}
                 style={{ transitionDelay: `${200 + i * 120}ms` }}
                 onClick={() => setSelectedFlavor(flavor)}
               >
                 {/* Color glow behind card on hover */}
                 <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl"
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl pointer-events-none"
                   style={{
                     background: `radial-gradient(circle at 50% 60%, hsl(${flavor.color} / 0.1), transparent 70%)`,
                   }}
@@ -139,33 +139,33 @@ const FlavorsSection = () => {
                   <img
                     src={flavor.image}
                     alt={flavor.name}
-                    className="w-36 lg:w-44 h-auto drop-shadow-[0_10px_40px_hsl(0_0%_0%/0.4)] group-hover:scale-110 group-hover:-translate-y-3 transition-all duration-500"
+                    className="w-32 sm:w-36 lg:w-44 h-auto drop-shadow-[0_10px_40px_hsl(0_0%_0%/0.4)] group-hover:scale-110 group-hover:-translate-y-3 transition-all duration-500"
                   />
                   {/* Colored reflection */}
                   <div
-                    className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-20 h-8 blur-2xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity duration-500"
+                    className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 sm:w-20 h-6 sm:h-8 blur-xl sm:blur-2xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity duration-500"
                     style={{ backgroundColor: `hsl(${flavor.color})` }}
                   />
                 </div>
 
-                <div className="relative z-10 text-center space-y-2">
+                <div className="relative z-10 text-center space-y-1.5 sm:space-y-2">
                   <h3
-                    className="text-2xl font-display font-bold uppercase tracking-wide"
+                    className="text-xl sm:text-2xl font-display font-bold uppercase tracking-wide"
                     style={{ color: `hsl(${flavor.color})` }}
                   >
                     {flavor.name}
                   </h3>
-                  <p className="text-xs text-muted-foreground uppercase tracking-[0.2em]">
+                  <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-[0.2em]">
                     {flavor.tagline}
                   </p>
                 </div>
 
                 {/* View details indicator */}
-                <div className="relative z-10 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                  <Eye className="w-3.5 h-3.5" style={{ color: `hsl(${flavor.color} / 0.7)` }} />
+                <div className="relative z-10 flex items-center gap-1.5 sm:gap-2 opacity-80 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 translate-y-0 md:translate-y-2 md:group-hover:translate-y-0 py-1 px-3 rounded-full bg-[hsl(0_0%_100%/0.03)] border border-[hsl(0_0%_100%/0.06)] md:bg-transparent md:border-transparent">
+                  <Eye className="w-3.5 h-3.5" style={{ color: `hsl(${flavor.color} / 0.8)` }} />
                   <span
-                    className="text-[10px] font-body font-semibold uppercase tracking-[0.2em]"
-                    style={{ color: `hsl(${flavor.color} / 0.7)` }}
+                    className="text-[9px] sm:text-[10px] font-body font-semibold uppercase tracking-[0.2em]"
+                    style={{ color: `hsl(${flavor.color} / 0.8)` }}
                   >
                     View Details
                   </span>

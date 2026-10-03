@@ -5,29 +5,29 @@ const CTASection = () => {
   const { ref, isVisible } = useScrollReveal(0.15);
 
   return (
-    <section className="relative py-36 lg:py-48 overflow-hidden" ref={ref}>
+    <section className="relative py-20 sm:py-32 lg:py-48 overflow-hidden" ref={ref}>
       {/* Multi-layer background */}
       <div className="absolute inset-0 mesh-gradient" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.05] blur-[140px] rounded-full animate-energy-pulse" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-primary/[0.05] blur-[100px] sm:blur-[140px] rounded-full animate-energy-pulse pointer-events-none" />
 
       {/* Grid */}
-      <div className="absolute inset-0 opacity-[0.02]"
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
         style={{
           backgroundImage: `linear-gradient(hsl(82 100% 50% / 0.4) 1px, transparent 1px), linear-gradient(90deg, hsl(82 100% 50% / 0.4) 1px, transparent 1px)`,
           backgroundSize: '100px 100px',
         }}
       />
 
-      <div className="container px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+      <div className="container px-4 sm:px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-10 sm:gap-16 lg:gap-24">
           {/* Floating can */}
           <div className={`flex-shrink-0 relative reveal-hidden reveal-left ${isVisible ? "reveal-visible" : ""}`}>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] rounded-full bg-primary/[0.08] blur-[60px] animate-glow-pulse" />
-            <img src={heroCan} alt="" className="relative z-10 w-44 lg:w-56 animate-float drop-shadow-[0_20px_60px_hsl(82_100%_50%/0.25)]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] sm:w-[250px] h-[180px] sm:h-[250px] rounded-full bg-primary/[0.08] blur-[40px] sm:blur-[60px] animate-glow-pulse pointer-events-none" />
+            <img src={heroCan} alt="" className="relative z-10 w-36 sm:w-44 lg:w-56 animate-float drop-shadow-[0_20px_60px_hsl(82_100%_50%/0.25)]" />
           </div>
 
-          <div className={`text-center lg:text-left space-y-8 flex-1 reveal-hidden ${isVisible ? "reveal-visible" : ""}`} style={{ transitionDelay: "200ms" }}>
-            <h2 className="text-6xl sm:text-7xl lg:text-8xl xl:text-[6.5rem] font-display font-bold uppercase tracking-tight leading-[0.82]">
+          <div className={`text-center lg:text-left space-y-6 sm:space-y-8 flex-1 reveal-hidden ${isVisible ? "reveal-visible" : ""}`} style={{ transitionDelay: "200ms" }}>
+            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] font-display font-bold uppercase tracking-tight leading-[0.88] sm:leading-[0.82]">
               Ready To
               <br />
               Feel{" "}
@@ -35,11 +35,11 @@ const CTASection = () => {
                 The Pulse?
               </span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed px-2 sm:px-0">
               Join the next generation of peak performance. Available now in select stores and online worldwide.
             </p>
-            <div className={`flex flex-col sm:flex-row items-center lg:items-start gap-4 reveal-hidden ${isVisible ? "reveal-visible" : ""}`} style={{ transitionDelay: "400ms" }}>
-              <button className="group relative inline-flex items-center gap-3 px-14 py-5 bg-primary text-primary-foreground font-display font-bold text-lg uppercase tracking-[0.15em] rounded-xl hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 box-glow-green overflow-hidden">
+            <div className={`flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 reveal-hidden ${isVisible ? "reveal-visible" : ""}`} style={{ transitionDelay: "400ms" }}>
+              <button className="group relative inline-flex items-center justify-center gap-3 px-10 sm:px-14 py-4 sm:py-5 bg-primary text-primary-foreground font-display font-bold text-base sm:text-lg uppercase tracking-[0.15em] rounded-xl hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 box-glow-green overflow-hidden w-full sm:w-auto">
                 <span className="relative z-10 flex items-center gap-3">
                   Unleash Now
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -49,19 +49,19 @@ const CTASection = () => {
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-[hsl(0_0%_100%/0.12)] to-transparent animate-shimmer" style={{ backgroundSize: '200% 100%' }} />
                 <span className="absolute -inset-px rounded-xl border border-primary/30 animate-glow-pulse pointer-events-none" />
               </button>
-              <div className="flex items-center gap-3 text-muted-foreground">
+              <div className="flex items-center gap-3 text-muted-foreground pt-1 sm:pt-0">
                 <div className="flex -space-x-2">
                   {["M.J.", "S.W.", "L.H.", "K.B."].map((init, i) => (
                     <div
                       key={init}
-                      className="w-8 h-8 rounded-full border-2 border-background bg-secondary flex items-center justify-center text-[8px] font-display font-bold text-foreground/60"
+                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-background bg-secondary flex items-center justify-center text-[7px] sm:text-[8px] font-display font-bold text-foreground/60"
                       style={{ zIndex: 4 - i }}
                     >
                       {init}
                     </div>
                   ))}
                 </div>
-                <span className="text-xs font-body">
+                <span className="text-[11px] sm:text-xs font-body">
                   <span className="text-primary font-semibold">2.4M+</span> athletes trust Pulse
                 </span>
               </div>

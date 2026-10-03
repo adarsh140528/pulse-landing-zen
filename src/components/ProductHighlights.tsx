@@ -29,32 +29,32 @@ const ProductHighlights = () => {
   const { ref, isVisible } = useScrollReveal(0.15);
 
   return (
-    <section className="relative py-28 lg:py-40 overflow-hidden" ref={ref}>
+    <section className="relative py-20 sm:py-28 lg:py-40 overflow-hidden" ref={ref}>
       {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/[0.03] blur-[120px] rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] lg:w-[800px] h-[300px] sm:h-[400px] bg-primary/[0.03] blur-[100px] sm:blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="container px-6 relative z-10">
-        <div className={`text-center mb-20 space-y-5 reveal-hidden ${isVisible ? "reveal-visible" : ""}`}>
+      <div className="container px-4 sm:px-6 relative z-10">
+        <div className={`text-center mb-12 sm:mb-16 lg:mb-20 space-y-4 sm:space-y-5 reveal-hidden ${isVisible ? "reveal-visible" : ""}`}>
           <div className="accent-line mx-auto" />
-          <p className="text-[11px] font-body font-semibold tracking-[0.4em] uppercase text-primary pt-3">
+          <p className="text-[10px] sm:text-[11px] font-body font-semibold tracking-[0.35em] sm:tracking-[0.4em] uppercase text-primary pt-2 sm:pt-3">
             Why Pulse
           </p>
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold uppercase tracking-tight leading-[0.85]">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold uppercase tracking-tight leading-[0.9] sm:leading-[0.85]">
             Engineered For
             <br />
             <span className="text-primary text-glow-green">Greatness</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {highlights.map((item, i) => (
             <div
               key={item.title}
-              className={`glass-card p-8 lg:p-10 space-y-6 group cursor-default relative overflow-hidden reveal-hidden ${isVisible ? "reveal-visible" : ""}`}
+              className={`glass-card p-6 sm:p-8 lg:p-10 space-y-5 sm:space-y-6 group cursor-default relative overflow-hidden reveal-hidden ${isVisible ? "reveal-visible" : ""}`}
               style={{ transitionDelay: `${200 + i * 120}ms` }}
             >
               {/* Top gradient accent */}
-              <div className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-b ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
+              <div className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-b ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />
 
               <div className="relative z-10 flex items-start justify-between">
                 <div className="w-14 h-14 rounded-2xl bg-primary/[0.08] flex items-center justify-center group-hover:bg-primary/[0.15] group-hover:shadow-[0_0_30px_hsl(82_100%_50%/0.15)] transition-all duration-500">

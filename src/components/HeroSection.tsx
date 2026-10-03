@@ -57,32 +57,32 @@ const HeroSection = () => {
         />
       ))}
 
-      <div className="container relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-20 px-6 pt-28 pb-20">
+      <div className="container relative z-10 flex flex-col lg:flex-row items-center gap-10 sm:gap-14 lg:gap-20 px-4 sm:px-6 pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20">
         {/* Text */}
         <div
-          className={`flex-1 text-center lg:text-left space-y-8 transition-all duration-[1.2s] ease-out ${
+          className={`flex-1 text-center lg:text-left space-y-6 sm:space-y-8 transition-all duration-[1.2s] ease-out w-full ${
             loaded ? "opacity-100 translate-y-0 blur-0" : "opacity-0 translate-y-10 blur-sm"
           }`}
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-primary/20 bg-primary/[0.06] backdrop-blur-sm">
-            <span className="relative flex h-2 w-2">
+          <div className="inline-flex items-center gap-2.5 sm:gap-3 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-primary/20 bg-primary/[0.06] backdrop-blur-sm max-w-full">
+            <span className="relative flex h-2 w-2 shrink-0">
               <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 animate-ping" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
-            <span className="text-[11px] font-body font-semibold tracking-[0.25em] uppercase text-primary">
+            <span className="text-[10px] sm:text-[11px] font-body font-semibold tracking-[0.2em] sm:tracking-[0.25em] uppercase text-primary truncate">
               Now Available Worldwide
             </span>
           </div>
 
-          <h1 className="text-7xl sm:text-8xl lg:text-[7.5rem] xl:text-[9rem] font-display font-bold uppercase leading-[0.82] tracking-[-0.03em]">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] xl:text-[9rem] font-display font-bold uppercase leading-[0.85] sm:leading-[0.82] tracking-[-0.02em] sm:tracking-[-0.03em]">
             <span className="text-foreground block">Feel</span>
             <span className="text-foreground block">The </span>
             <span className="text-primary text-glow-green block relative">
               Pulse
               {/* Underline accent */}
               <span
-                className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-primary to-accent rounded-full"
+                className="absolute -bottom-1 sm:-bottom-2 left-0 h-0.5 sm:h-1 bg-gradient-to-r from-primary to-accent rounded-full"
                 style={{
                   width: loaded ? "100%" : "0%",
                   transition: "width 1s cubic-bezier(0.16,1,0.3,1) 0.8s",
@@ -91,12 +91,12 @@ const HeroSection = () => {
             </span>
           </h1>
 
-          <p className="text-lg lg:text-xl text-muted-foreground max-w-md mx-auto lg:mx-0 font-light leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-md mx-auto lg:mx-0 font-light leading-relaxed px-2 sm:px-0">
             Fuel your energy. Elevate your performance. Engineered for those who refuse to stop.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 pt-2">
-            <button className="group relative inline-flex items-center gap-3 px-10 py-4.5 bg-primary text-primary-foreground font-display font-bold text-base uppercase tracking-[0.15em] rounded-xl hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 box-glow-green overflow-hidden">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center lg:items-start justify-center lg:justify-start gap-3 sm:gap-4 pt-2 w-full max-w-md mx-auto lg:mx-0">
+            <button className="group relative inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-4.5 bg-primary text-primary-foreground font-display font-bold text-sm sm:text-base uppercase tracking-[0.15em] rounded-xl hover:scale-[1.03] active:scale-[0.97] transition-all duration-200 box-glow-green overflow-hidden w-full sm:w-auto">
               <span className="relative z-10 flex items-center gap-3">
                 Unleash Now
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -105,8 +105,8 @@ const HeroSection = () => {
               </span>
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-[hsl(0_0%_100%/0.15)] to-transparent animate-shimmer" style={{ backgroundSize: '200% 100%' }} />
             </button>
-            <button className="inline-flex items-center gap-2 px-6 py-4 font-body text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 group">
-              <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center group-hover:border-primary/60 group-hover:shadow-[0_0_20px_hsl(82_100%_50%/0.2)] transition-all duration-300">
+            <button className="inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-4 font-body text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 group w-full sm:w-auto">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-primary/30 flex items-center justify-center group-hover:border-primary/60 group-hover:shadow-[0_0_20px_hsl(82_100%_50%/0.2)] transition-all duration-300 shrink-0">
                 <svg className="w-4 h-4 text-primary ml-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
                 </svg>
@@ -118,35 +118,35 @@ const HeroSection = () => {
 
         {/* Can */}
         <div
-          className={`flex-1 flex justify-center relative transition-all duration-[1.4s] delay-200 ease-out ${
+          className={`flex-1 flex justify-center relative transition-all duration-[1.4s] delay-200 ease-out w-full ${
             loaded ? "opacity-100 translate-y-0 blur-0 scale-100" : "opacity-0 translate-y-16 blur-md scale-95"
           }`}
         >
-          <div className="relative">
+          <div className="relative max-w-full">
             {/* Orbiting glow dots */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] animate-rotate-slow" style={{ animationDuration: "15s" }}>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[400px] h-[280px] sm:h-[400px] animate-rotate-slow pointer-events-none" style={{ animationDuration: "15s" }}>
               <div className="absolute top-0 left-1/2 w-2 h-2 rounded-full bg-primary/60 blur-[2px]" />
               <div className="absolute bottom-0 right-0 w-1.5 h-1.5 rounded-full bg-accent/50 blur-[2px]" />
             </div>
 
             {/* Aura layers */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] rounded-full bg-primary/[0.06] blur-[80px] animate-energy-pulse" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] rounded-full bg-primary/[0.1] blur-[50px] animate-glow-pulse" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[260px] sm:w-[380px] h-[260px] sm:h-[380px] rounded-full bg-primary/[0.06] blur-[60px] sm:blur-[80px] animate-energy-pulse pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] sm:w-[250px] h-[180px] sm:h-[250px] rounded-full bg-primary/[0.1] blur-[35px] sm:blur-[50px] animate-glow-pulse pointer-events-none" />
 
             <img
               src={heroCan}
               alt="Nike Pulse Energy Drink Can"
-              className="relative z-10 w-[300px] sm:w-[360px] lg:w-[420px] drop-shadow-[0_25px_80px_hsl(82_100%_50%/0.3)] animate-float"
+              className="relative z-10 w-[230px] sm:w-[320px] md:w-[360px] lg:w-[420px] max-w-full drop-shadow-[0_25px_80px_hsl(82_100%_50%/0.3)] animate-float"
             />
 
             {/* Reflection pool */}
-            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[70%] h-20 bg-primary/15 blur-[40px] rounded-full" />
+            <div className="absolute -bottom-6 sm:-bottom-10 left-1/2 -translate-x-1/2 w-[70%] h-14 sm:h-20 bg-primary/15 blur-[30px] sm:blur-[40px] rounded-full" />
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-20 transition-all duration-700 delay-[1.5s] ${loaded ? "opacity-100" : "opacity-0"}`}>
+      <div className={`hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-3 z-20 transition-all duration-700 delay-[1.5s] ${loaded ? "opacity-100" : "opacity-0"}`}>
         <span className="text-[9px] font-body font-medium uppercase tracking-[0.4em] text-muted-foreground/60">Scroll to explore</span>
         <div className="w-5 h-8 rounded-full border border-primary/20 flex items-start justify-center p-1.5">
           <div className="w-1 h-2 rounded-full bg-primary/60 animate-bounce" style={{ animationDuration: "1.5s" }} />
@@ -154,7 +154,7 @@ const HeroSection = () => {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background via-background/80 to-transparent z-20" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-48 bg-gradient-to-t from-background via-background/80 to-transparent z-20 pointer-events-none" />
     </section>
   );
 };

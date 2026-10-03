@@ -30,23 +30,23 @@ const StatsSection = () => {
   const { ref, isVisible } = useScrollReveal(0.2);
 
   return (
-    <section className="relative py-28 lg:py-40 overflow-hidden" ref={ref}>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/[0.03] blur-[140px] rounded-full" />
+    <section className="relative py-20 sm:py-28 lg:py-40 overflow-hidden" ref={ref}>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[350px] sm:w-[600px] lg:w-[800px] h-[300px] sm:h-[400px] bg-primary/[0.03] blur-[100px] sm:blur-[140px] rounded-full pointer-events-none" />
 
-      <div className="container px-6 relative z-10">
-        <div className={`text-center mb-20 space-y-5 reveal-hidden ${isVisible ? "reveal-visible" : ""}`}>
+      <div className="container px-4 sm:px-6 relative z-10">
+        <div className={`text-center mb-12 sm:mb-16 lg:mb-20 space-y-4 sm:space-y-5 reveal-hidden ${isVisible ? "reveal-visible" : ""}`}>
           <div className="accent-line mx-auto" />
-          <p className="text-[11px] font-body font-semibold tracking-[0.4em] uppercase text-primary pt-3">
+          <p className="text-[10px] sm:text-[11px] font-body font-semibold tracking-[0.35em] sm:tracking-[0.4em] uppercase text-primary pt-2 sm:pt-3">
             Performance Data
           </p>
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold uppercase tracking-tight leading-[0.85]">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-display font-bold uppercase tracking-tight leading-[0.9] sm:leading-[0.85]">
             The <span className="text-primary text-glow-green">Numbers</span>
             <br />
             Speak
           </h2>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-14">
+        <div className="max-w-4xl mx-auto space-y-10 sm:space-y-14">
           {stats.map((stat, i) => (
             <div
               key={stat.label}
@@ -55,20 +55,20 @@ const StatsSection = () => {
             >
               {/* Background number */}
               <span
-                className="absolute -top-4 right-0 text-[6rem] font-display font-bold uppercase leading-none pointer-events-none select-none"
+                className="absolute -top-3 sm:-top-4 right-0 text-[3.5rem] sm:text-[5rem] lg:text-[6rem] font-display font-bold uppercase leading-none pointer-events-none select-none"
                 style={{ color: `hsl(${stat.color} / 0.04)` }}
               >
                 {stat.prefix}{stat.value}{stat.suffix}
               </span>
 
-              <div className="relative z-10 space-y-4">
+              <div className="relative z-10 space-y-3 sm:space-y-4">
                 <div className="flex items-end justify-between">
                   <div className="space-y-1">
-                    <span className="text-xs font-body font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+                    <span className="text-[11px] sm:text-xs font-body font-semibold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-muted-foreground">
                       {stat.label}
                     </span>
                   </div>
-                  <span className="text-5xl lg:text-6xl font-display font-bold tabular-nums tracking-tight" style={{ color: `hsl(${stat.color})`, textShadow: `0 0 30px hsl(${stat.color} / 0.3)` }}>
+                  <span className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold tabular-nums tracking-tight" style={{ color: `hsl(${stat.color})`, textShadow: `0 0 30px hsl(${stat.color} / 0.3)` }}>
                     <AnimatedNumber target={stat.value} prefix={stat.prefix} suffix={stat.suffix} animate={isVisible} />
                   </span>
                 </div>
